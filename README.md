@@ -34,12 +34,12 @@ the following structure:
   * cell_metadata:
     * file: <cell metadata file name, e.g. cell_metadata.tsv>
     * organism: <NCBI taxonomy ID, e.g. 10090 for mouse>
-    * \[optional\]batch_column: <column name in cell metadata file>
+    * \[optional\] batch_column: <column name in cell metadata file>
   * gene_metadata:
     * file: <file name containing the gene IDs used for analysis, e.g. gene_metadata.tsv>
   * expression_data: 
     * file: <file name for the single-cell RNA-seq dataset in sparse FASTGenomics format, e.g. expression_data.tsv>
-  * \[optional\]supplemental: 
+  * \[optional\] supplemental: 
     * unconsidered_genes:
       * expression_data:
         * file: <file containting data of unconsidered genes, e.g. unconsidered_expression_data.tsv>
@@ -55,9 +55,9 @@ the following structure:
   * preprocessing:
     * notes: <description how the dataset has been prepared, including cell and gene exclusion criteria, etc.>
     * tools:
-		     - <tools used for dataset preparation, e.g. FGpackageR>
-		     - <another tool used for dataset preparation>
-    * \[optional\]image: <optional file name for image shown in the FASTGenomics data store, e.g. image.png>
+      * <tools used for dataset preparation, e.g. FGpackageR>
+      * <another tool used for dataset preparation>
+    * \[optional\] image: <optional file name for image shown in the FASTGenomics data store, e.g. image.png>
 
 
 ### File Format Specifications
