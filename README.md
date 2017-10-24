@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Single-cell RNA-seq datasets typically consist of several data types that are 
+Single-cell RNA-seq datasets typically consist of several data data tables that are 
 all required for the understanding of an experiment. The FASTGenomics 
 ecosystem for single-cell RNA-seq analyses provides functionality to make 
 these analyses as easy and convenient as possible. To enable the data analysis 
@@ -18,10 +18,10 @@ into one ZIP file.
 The following table gives an overview of files that have to be included in a 
 FASTGenomics dataset package:
 
-* `manifest.yml`	Detailed description of the dataset package, including file definitions and dataset description.
+* `manifest.yml`	Details about the dataset package, including file definitions and dataset description.
 * `expression_data.tsv`	Expression data for Entrez ID-coded genes in sparse FASTGenomics format used for data analysis.
 * `cell_metadata.tsv`	Tab-separated file with metadata about cells used in the analysis.
-* `gene_metadata.tsv`	File containing the gene IDs used for analysis.
+* `gene_metadata.tsv`	File containing the gene (=Entrez) IDs used for analysis.
 
 
 ### Data Package Description
@@ -33,10 +33,10 @@ the following structure:
 * data:
   * cell_metadata:
     * file: <cell metadata file name, e.g. cell_metadata.tsv>
-    * organism: <NCBI taxonomy ID, e.g. 10090 for mouse>
+    * organism: <NCBI taxonomy ID, e.g. 10090 for mouse or 9606 for human>
     * \[optional\] batch_column: <column name in cell metadata file>
   * gene_metadata:
-    * file: <file name containing the gene IDs used for analysis, e.g. gene_metadata.tsv>
+    * file: <file name containing the Entrez gene IDs used for analysis, e.g. gene_metadata.tsv>
   * expression_data: 
     * file: <file name for the single-cell RNA-seq dataset in sparse FASTGenomics format, e.g. expression_data.tsv>
   * \[optional\] supplemental: 
@@ -73,10 +73,11 @@ represented as zeros. Depending on the technology used to generate the
 single-cell expression dataset, the proportion of zeros in a dense matrix may 
 be higher than 90%. To save disk space, FASTGenomics therefore uses a sparse 
 matrix data format to store expression data. A FASTGenomics sparse expression 
-matrix file is a simple text file storing data in three tab-separated columns with a header line. This case-sensitive header 
-line stores mandatory column names (`cellId`, `entrezId` and `expressionValue`) 
-and data type information (`Integer`, `Number` and `String`) separated by an asterisk 
-(`*`). The first column contains zero-based integer values identifying cells. 
+matrix file is a simple text file storing data in three tab-separated columns 
+with a header line. This case-sensitive header line stores mandatory column 
+names (`cellId`, `entrezId` and `expressionValue`) and data type information 
+(`Integer`, `Number` and `String`) separated by an asterisk (`*`). 
+The first column contains zero-based integer values identifying cells. 
 The second column contains the identifier representing a gene (the Entrez ID 
 for genes analyzed in [FASTGenomics](https://fastgenomics.org)). The third column holds the expression 
 value of this gene in a particular cell (see example below).
@@ -122,10 +123,13 @@ further information (e.g. reason for exclusion).
 #### Cell Metadata
 
 Cell metadata is provided in a tab-separated text file that contains a header line. 
+The first column should be `cellId`, further columns can be added including information
+about cell type, treatment, batch effects, published cluster assignments, etc.
 
 #### Image
 
-If an image is being supplied in the manifest, use a common-known image format such as png or jpg (e.g. dropseq.png).
+If an image is being supplied in the manifest, use a common-known image format such as 
+png or jpg (e.g. `dropseq.png`).
 
 ### Package Bundling
 
