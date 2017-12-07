@@ -1,0 +1,31 @@
+schema_version: 2.1
+data:
+  cell_metadata:
+    file: cell_metadata.tsv
+    organism: 9606.0
+    batch_column: batch
+  gene_metadata:
+    file: gene_metadata.tsv
+  expression_data:
+    file: expression_data.tsv
+  supplemental:
+    unconsidered_genes:
+      expression_data:
+        file: ~
+      gene_metadata:
+        file: ~
+metadata:
+  title: FASTGenomics Data Package Example
+  technology: in silico-generated data
+  version: 1.0
+  contact: Comma Soft AG
+  description: in silico-generated dataset for demonstrating how to create a FASTGenomics
+    Data Package; available from https://github.com/FASTGenomics/FASTGenomics_Data_Package_Format
+  short_description: In Silico Example Data Package
+  preprocessing:
+    notes: expression defined as at least one read present; cells with 0 expressed
+      genes and genes expressed in 0 cells were removed; HGNC symbols were translated
+      to Entrez IDs using org.Hs.eg.db version 3.4.2
+    tools: R with Matrix and yaml packages as well as the Bioconductor package org.Hs.eg.db.
+  image: image.png
+

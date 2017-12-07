@@ -1,0 +1,6 @@
+sampleName	cellType	batch	quality
+cell.4	Y	B	bad
+cell.1	X	A	good
+cell.2	X	A	good
+cell.3	Y	A	good
+cell.5	Y	B	good

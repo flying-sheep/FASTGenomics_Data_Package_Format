@@ -11,6 +11,10 @@ a defined format which is detailed below. Briefly, a dataset consists of files
 containing expression data, metadata describing cells and genes as well as the 
 experimental conditions. To reduce disk space, all these files are bundled 
 into one ZIP file.
+Apart from the package description below, the `example` folder in this repository
+contains correctly structured, however not zipped, files to illustrate how a FASTGenomics
+Data Package should look like. Furthermore, the following link leads you to an R-based
+step by step tutorial [how to create a FASTGenomics Data Package](./Tutorial.md).
 
 
 ### Components of a FASTGenomics Data Package
@@ -123,7 +127,7 @@ further information (e.g. reason for exclusion).
 #### Cell Metadata
 
 Cell metadata is provided in a tab-separated text file that contains a header line. 
-The first column should be `cellId`, further columns can be added including information
+The first column should be `cellId*Integer`, further columns can be added including information
 about cell type, treatment, batch effects, published cluster assignments, etc.
 
 #### Image
