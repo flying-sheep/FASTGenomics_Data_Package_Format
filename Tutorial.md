@@ -9,7 +9,7 @@ execute the following commands:
 
 ```
 source("http://bioconductor.org/biocLite.R")
-biocLite("org.Hs.eg,db")
+biocLite("org.Hs.eg.db")
 install.packages("Matrix", dependencies = TRUE)
 install.packages("yaml", dependencies = TRUE)
 ```
