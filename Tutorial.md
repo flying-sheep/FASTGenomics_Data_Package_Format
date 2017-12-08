@@ -22,7 +22,7 @@ make sure that you set the working directory using `setwd`.
 
 ```
 # load the data, returns a data.frame object
-dense_matrix <- read.table("https://github.com/FASTGenomics/FASTGenomics_Data_Package_Format/example/dense_matrix_HGNC.txt",
+dense_matrix <- read.table("https://raw.githubusercontent.com/FASTGenomics/FASTGenomics_Data_Package_Format/master/example/dense_matrix_HGNC.txt",
                            header = TRUE,
 		                   sep = "\t")
 # convert data.frame to matrix
@@ -37,7 +37,7 @@ need to load into R.
 
 ```
 # load the metadata table
-dense_meta <- read.table("https://github.com/FASTGenomics/FASTGenomics_Data_Package_Format/example/dense_matrix_metadata.txt",
+dense_meta <- read.table("https://raw.githubusercontent.com/FASTGenomics/FASTGenomics_Data_Package_Format/master/example/dense_matrix_metadata.txt",
                          header = TRUE,
 		                 sep = "\t")
 						 
